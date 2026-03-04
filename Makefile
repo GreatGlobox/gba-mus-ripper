@@ -12,9 +12,10 @@ FLAGS=-Wall -fdata-sections -ffunction-sections -fmax-errors=5 -Os
 
 
 # For Android (building with a computer)
-# Use windows, linux, or darwin depending on the OS
+# Set HOST to windows, linux, or darwin depending on the OS
+# Set NDK to your actual NDK path
 # HOST=linux 
-# NDK=<Your NDK path>
+# NDK=/opt/android-ndk
 # API=21
 # TARGET=armv7a-linux-androideabi
 # CC=$(NDK)/toolchains/llvm/prebuilt/(HOST)-x86_64/bin/$(TARGET)$(API)-clang
@@ -60,4 +61,5 @@ clean:
 	rm -f *.o *.s *.i *.ii
 	rm -rf build/
 	rm -rf out/
+
 
