@@ -7,8 +7,19 @@ CC=x86_64-w64-mingw32-gcc.exe -std=c99
 # CPPC=/usr/bin/g++ -std=gnu++11
 # CC=/usr/bin/gcc -std=c99
 
-# Parameters used for compilation
+# On Android
+# NDK=/opt/android-ndk
+# API=21
+# TARGET=armv7a-linux-androideabi
+# CC=$(NDK)/toolchains/llvm/prebuilt/linux-x86_64/bin/$(TARGET)$(API)-clang
+# CPPC=$(NDK)/toolchains/llvm/prebuilt/linux-x86_64/bin/$(TARGET)$(API)-clang++
+
+# Parameters used for compilation (Windows / Linux)
 FLAGS=-Wall -fdata-sections -ffunction-sections -fmax-errors=5 -Os
+
+# On Android
+#FLAGS=-Wall -fdata-sections -ffunction-sections -fmax-errors=5 -Os -fno-strict-aliasing -D__ANDROID_API__=$(API)
+
 # Additional parameters used for linking whole programs
 WHOLE=-s -fwhole-program -static
 
